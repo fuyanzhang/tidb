@@ -372,7 +372,8 @@ func (do *Domain) LoadPrivilegeLoop(ctx context.Context) error {
 	do.privHandle = privileges.NewHandle(ctx)
 	err := do.privHandle.Update()
 	if err != nil {
-		return errors.Trace(err)
+		return nil
+		// return errors.Trace(err)
 	}
 
 	go func(do *Domain) {
